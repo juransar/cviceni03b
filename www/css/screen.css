@@ -1,0 +1,31 @@
+div.table-comp div.table-empl
+{
+    display: table;
+}
+div.table-row-comp {
+    display: table-row;
+}
+div.table-row-comp div
+{
+    padding-left: 1em;
+    padding-right: 1em;
+    display: table-cell;
+    border: 1px solid black;
+
+}
+div.table-row-comp .twocol div,div.table-row-empl .twocol div{
+    display: table-cell;
+    border: none;
+
+}
+div.table-row-empl {
+    display: table-row;
+}
+div.table-row-empl div
+{
+    padding-left: 1em;
+    padding-right: 1em;
+    display: table-cell;
+    border: 1px solid black;
+
+}

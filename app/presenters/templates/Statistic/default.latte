@@ -1,0 +1,30 @@
+{block #content}
+
+<h1>Statistiky</h1>
+
+<p>
+    <a href="{plink Pid:default}">Rodná čísla</a>
+    <a href="{plink Company:default}">Firmy</a>
+    <a href="{plink Employer:default}">Zaměstnanci</a>
+    <a href="{plink Homepage:default}">Menu</a>
+</p>
+
+<table border="1" width="100%">
+    <tr>
+        <th>Firma</th>
+        <th>Minimální plat ve firmě</th>
+        <th>Minimální plat ve firmě</th>
+        <th>Průměrný plat ve firmě</th>
+        <th>Celková plat ve firmě</th>
+    </tr>
+        {foreach $statistics as $s}
+            <tr>
+                <td>{$s['name']}</td>
+                <td>{$s['min']}</td>
+                <td>{$s['max']}</td>
+                <td>{$s['avg']}</td>
+                <td>{$s['sum']}</td>
+            </tr>
+        {/foreach}
+    </div>
+</table>

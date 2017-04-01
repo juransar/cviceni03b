@@ -1,0 +1,53 @@
+{block #content}
+
+<h1>Firmy</h1>
+
+<p>
+    <a href="{plink Pid:default}">Rodná čísla</a>
+    <a href="{plink Employer:default}">Zaměstnanci</a>
+    <a href="{plink Statistic:default}">Statistika</a>
+    <a href="{plink Homepage:default}">Menu</a>
+</p>
+<a href="{plink add}">Vytvoř</a>
+{*<table border="1" width="100%">
+    <tr>
+        <th>Jméno</th>
+        <th>Registrace</th>
+        <th>Je plátce DPH?</th>
+        <th>Telefon</th>
+        <th colspan="2">Akce</th>
+    </tr>
+        {foreach $companies as $c}
+            <tr>
+                <td>{$c->name}</td>
+                <td>{$c->registered|date:"j.n.Y - G:i:s"}</td>
+                <td>{$c->is_dph ? 'ano' : 'ne'}</td>
+                <td>{$c->phone|phone}</td>
+                <td><a href="{plink edit id => $c->id}">Edituj</a></td>
+                <td><a href="{plink delete id => $c->id}">Odeber</a></td>
+            </tr>
+        {/foreach}
+    </div>
+</table>*}
+
+<div class="table-comp">
+    <div class="table-row-comp">
+        <div>Jméno</div>
+        <div>Registrace</div>
+        <div>Je plátce DPH?</div>
+        <div>Telefon</div>
+        <div class="twocol">Akce</div>
+    </div>
+    {foreach $companies as $c}
+        <div class="table-row-comp">
+            <div>{$c->name}</div>
+            <div>{$c->registered|date:"j.n.Y - G:i:s"}</div>
+            <div>{$c->is_dph ? 'ano' : 'ne'}</div>
+            <div>{$c->phone|phone}</div>
+            <div class="twocol">
+                <div><a href="{plink edit id => $c->id}">Edituj</a></div>
+                <div><a href="{plink delete id => $c->id}">Odeber</a></div>
+            </div>
+        </div>
+    {/foreach}
+</div>
